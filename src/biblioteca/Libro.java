@@ -2,7 +2,7 @@ package biblioteca;
 
 import java.util.Objects;
 
-public class Libro implements Cloneable, Comparable<Libro>{
+public class Libro implements Cloneable, Comparable<Libro> {
 
 	private String autor;
 	private String titulo;
@@ -52,7 +52,7 @@ public class Libro implements Cloneable, Comparable<Libro>{
 	public String getTitulo() {
 		return this.titulo;
 	}
-	
+
 	public int getAnioDePublicacion() {
 		return this.anioPublicacion;
 	}
@@ -87,7 +87,7 @@ public class Libro implements Cloneable, Comparable<Libro>{
 	public Libro clone() throws CloneNotSupportedException {
 		return (Libro) super.clone();
 	}
-	
+
 	@Override
 	public int compareTo(Libro otroLibro) {
 		if (this.titulo.compareTo(otroLibro.titulo) == 0) {

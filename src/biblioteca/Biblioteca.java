@@ -2,6 +2,10 @@ package biblioteca;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Biblioteca {
 
@@ -39,7 +43,7 @@ public class Biblioteca {
 		Collections.sort(this.libros, new OrdenadorPorAnioDePublicacion());
 	}
 
-	public String cantidadLibrosPorGenero() {
+	/*public String cantidadLibrosPorGenero() {
 		String librosPorGenero = "";
 		Genero[] generos = Genero.values();
 		int[] cantidadLibrosPorGenero = new int[generos.length];
@@ -47,9 +51,35 @@ public class Biblioteca {
 			cantidadLibrosPorGenero[libro.getGenero().ordinal()] += 1;
 		}
 		for (Genero genero : generos) {
-			librosPorGenero += genero.name() + " " + cantidadLibrosPorGenero[genero.ordinal()] + "/n";
+			librosPorGenero += genero.name() + " " + cantidadLibrosPorGenero[genero.ordinal()] + "\n";
 		}
 		return librosPorGenero;
+	}*/
+
+	public String cantidadLibrosPorGenero() {
+
+		Map<Genero, ArrayList<Libro>> librosPorGenero = new HashMap<Genero, ArrayList<Libro>>();
+		ArrayList<Libro> aux;
+		Genero key;
+		String cantidadLibrosPorGenero = "";
+
+		for (Libro cadaLibro : this.libros) {
+			key = cadaLibro.getGenero();
+			if (librosPorGenero.containsKey(key)) {
+				aux = librosPorGenero.get(key);
+			} else {
+				aux = new ArrayList<Libro>();
+			}
+			aux.add(cadaLibro);
+			librosPorGenero.put(key, aux);
+		}
+
+		for (Entry<Genero, ArrayList<Libro>> cadaGenero : librosPorGenero.entrySet()) {
+			cantidadLibrosPorGenero += cadaGenero.getKey() + " " + cadaGenero.getValue().size() + "\n";
+		}
+
+		return cantidadLibrosPorGenero;
+
 	}
 
 	public boolean libroRepetido(Libro libro) {
