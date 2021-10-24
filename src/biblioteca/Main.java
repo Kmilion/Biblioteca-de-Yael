@@ -4,10 +4,10 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Libro libro1 = new Libro("J. K. Rowling", 1000, "Harry Potter 1", 1998, Genero.FICCION);
-		Libro libro2 = new Libro("Tolkien", 1300, "El Señor de los Anillos 1", 1989, Genero.NOVELA);
+		Libro libro1 = new Libro("J. K. Rowling", 1000, "Harry Potter 1", 1998, Genero.NOVELA);
+		Libro libro2 = new Libro("Tolkien", 1300, "El Señor de los Anillos 1", 1989, Genero.FANTASIA);
 		Libro libro3 = new Libro("C. S. Lewis", 800, "Las Crónicas de Narnia 1", 1995, Genero.FANTASIA);
-		Libro libro4 = new Libro("J. K. Rowling", 678, "Harry Potter 2", 1998, Genero.FICCION);
+		Libro libro4 = new Libro("J. K. Rowling", 678, "Harry Potter 2", 1998, Genero.AUTOAYUDA);
 		Libro libro5 = new Libro("Tolkien", 975, "El Señor de los Anillos 2", 1989, Genero.NOVELA);
 		Libro libro6 = new Libro("C. S. Lewis", 575, "Las Crónicas de Narnia 2", 1995, Genero.FANTASIA);
 		Libro libro7 = new Libro("J. K. Rowling", 1000, "Harry Potter 3", 1998, Genero.AUTOAYUDA);
